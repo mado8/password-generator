@@ -9,6 +9,9 @@ This password generator was created to emphasize the importance of password secu
 ## Links
 
 ## Contact
+
 Madeline Donley
+
 email: madelineadonley@gmail.com
+
 phone: 720-614-1655

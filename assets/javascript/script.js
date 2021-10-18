@@ -1,13 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var passwordText = document.getElementById('password')
+var passwordArray = [];
 
 //prompts type of characters included in password when button is clicked
 function prompts() {
   const inputlength = prompt('How many characters would you like your password?', '16');
   //length of password
   if (inputlength == '' || inputlength == null){
-    alert('Please enter a value to continue.');
+    return;
   } else if (inputlength >= 129){
         alert('Too many characters. Try again.');
         return;
@@ -23,10 +24,11 @@ function prompts() {
 
   const inputupper = prompt('Would you like to include uppercase letters in your password? Type yes or no.');  
   //option for uppercase letters
-      if (inputupper == "yes") {
+  if (inputupper == '' || inputupper == null){
+    return;
+  } else if (inputupper == "yes") {
         alert('Uppercase letters will be included in your password.');
-      } else 
-          if (inputupper == "no") {
+      } else if (inputupper == "no") {
             alert('Uppercase letters will not be included.');
           } else {
               alert('Please enter yes or no.');
@@ -35,10 +37,11 @@ function prompts() {
 
   const inputlower = prompt('Would you like to include lowercase letters in your password? Type yes or no.');
   //option for lowercase letters
-      if (inputlower == "yes") {
+  if (inputlower == '' || inputlower == null){
+    return;
+  } else if (inputlower == "yes") {
         alert('Lowercase letters will be included in your password.');
-      } else 
-          if (inputlower == "no") {
+      } else if (inputlower == "no") {
             alert('Lowercase letters will not be included.');
           } else {
               alert('Please enter yes or no.');
@@ -47,10 +50,11 @@ function prompts() {
 
   const inputsymbol = prompt('Would you like to include symbols in your password? Type yes or no.');
   //option for inclusion of symbols  
-      if (inputsymbol == "yes") {
+  if (inputsymbol == '' || inputsymbol == null){
+    return;
+  } else if (inputsymbol == "yes") {
         alert('Symbols will be included in your password.');
-      } else 
-          if (inputsymbol == "no") {
+      } else if (inputsymbol == "no") {
             alert('Symbols will not be included.');
           } else {
               alert('Please enter yes or no.');
@@ -59,10 +63,11 @@ function prompts() {
 
   const inputnumber = prompt('Would you like to include numbers in your password? Type yes or no.');
   //option for inclusion of numbers
-      if (inputnumber == "yes") {
+  if (inputnumber == '' || inputnumber == null){
+    return;
+  } else if (inputnumber == "yes") {
         alert('Numbers will be included in your password.');
-      } else 
-          if (inputnumber == "no") {
+      } else if (inputnumber == "no") {
             alert('Numbers will not be included.');
           } else {
               alert('Please enter yes or no.');
@@ -97,19 +102,6 @@ function randomSymbol() {
 // add event listener to button to run prompts function
 generateBtn.addEventListener('click', function() {
   prompts();
+
 })
 
-//uses defined random character functions to generate a string of x length
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);

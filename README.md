@@ -1,4 +1,4 @@
-# password-generator-hw-3
+# password-generator
 Using JavaScript to generate random passwords with character specifications.
 
 ## Description

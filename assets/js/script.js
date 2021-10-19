@@ -151,6 +151,7 @@ generateBtn.addEventListener('click', function() {
     var randomFunc = functionArray[Math.floor(Math.random() * functionArray.length)]();
     passwordArray.push(randomFunc);
     console.log(passwordArray);
+    passwordText.append(passwordArray[passwordArray.length - 1])
   }
   
 })

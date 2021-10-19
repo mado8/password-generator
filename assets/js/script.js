@@ -1,15 +1,28 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var passwordText = document.getElementById('password')
-
+// create globally scoped variables
 var lengthNum;
-// 
 var upperTrue;
 var lowerTrue;
 var symbolTrue;
 var numberTrue;
+var passwordArray;
 
-var passwordArray = [];
+// resets default user imputs
+function defaultImput() {
+  passwordText.innerHTML = '';
+  // prompt imputs set to false
+  upperTrue = false;
+  lowerTrue = false;
+  symbolTrue = false;
+  numberTrue = false;
+  // length of password set to 0
+  lengthNum = 0;
+  // imputs pushed to array set to empty
+  passwordArray = [];
+  functionArray = [];
+};
 
 //prompts type of characters included in password when button is clicked
 function prompts() {
@@ -115,6 +128,7 @@ function randomSymbol() {
 // lowercase, uppercase, number, and symbol array.
 var functionArray = [];
 
+// if user selects yes to password character options, their functions will be pushed to this array
 function pushArray() {
   if (upperTrue === true) {
     functionArray.push(randomUpper);
@@ -130,29 +144,21 @@ function pushArray() {
   }
 }
 
-// add event listener to button to run prompts function
-generateBtn.addEventListener('click', function() {
-
-  upperTrue = false;
-  lowerTrue = false;
-  symbolTrue = false;
-  numberTrue = false;
-
-  lengthNum = 0;
-  passwordArray = [];
-  functionArray = [];
-
-  prompts();
-  pushArray();
-
-  console.log(functionArray)
-
+// function to randomly run function in functionArray and append resulting characters
+function appendCharacters() {
   for (let i = 0; i < lengthNum; i++) {
     var randomFunc = functionArray[Math.floor(Math.random() * functionArray.length)]();
     passwordArray.push(randomFunc);
     console.log(passwordArray);
     passwordText.append(passwordArray[passwordArray.length - 1])
   }
-  
-})
+};
+
+// add event listener to button to run prompts function
+generateBtn.addEventListener('click', function() {
+  defaultImput();
+  prompts();
+  pushArray();
+  appendCharacters();
+});
 

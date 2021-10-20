@@ -10,10 +10,10 @@ https://user-images.githubusercontent.com/88465484/138014932-586a4ae9-4cf7-4c9b-
 ## Links
 
 
-Live Webpage: **https://mado8.github.io/password-generator/** (https://mado8.github.io/password-generator/)
+Live Webpage: *https://mado8.github.io/password-generator/*
 
 
-GitHub: **https://github.com/mado8/password-generator** (https://github.com/mado8/password-generator)
+GitHub: *https://github.com/mado8/password-generator*
 
 
 ## Contact
